@@ -1,0 +1,16 @@
+{
+  "cities": [
+    {
+      "name": "Kazan",
+      "value": "Kazan"
+    },
+    {
+      "name": "Almetyevsk",
+      "value": "Almet"
+    },
+    {
+      "name": "Moscow",
+      "value": "Moscow"
+    }
+  ]
+}

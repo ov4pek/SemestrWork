@@ -1,0 +1,23 @@
+{
+  "universities_kazan": [
+    {
+      "kfu": {
+        "name": "Kazan Federal University",
+        "value": "kfu"
+      }
+    },
+    {
+      "kgasu": {
+        "name": "Kazan State Univercity of Architecture and Engineering",
+        "value": "kgasu"
+      }
+    }
+  ],
+  "universities_almetyevsk": [
+    {
+      "name": "Neftyanoy",
+      "value": "neft"
+    }
+
+  ]
+}
