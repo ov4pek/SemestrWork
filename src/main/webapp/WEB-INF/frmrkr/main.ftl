@@ -25,7 +25,7 @@
         </h1>
     </div>
 
-    <form action="/raspis/(${'#sel4'}">
+    <form action="/raspis>
         <div class="form-group">
             <label for="sel1">Select city (select one):</label>
             <select class="form-control" id="sel1" onclick="ajaxMe($('#sel1').val(),'sel2')"
@@ -46,13 +46,15 @@
             </select>
             <br>
             <label for="sel4">Select group (select one):</label>
-            <select class="form-control" id="sel4">
+            <select class="form-control" id="sel4" onclick="f1($('#sel4').val())">
 
             </select>
             <br>
         </div>
-
     </form>
+    <div id="form_submit">
+
+    </div>
 </div>
 
 <script type="text/javascript" src="/resources/js/ajax.js"></script>

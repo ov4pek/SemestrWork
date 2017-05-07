@@ -1,0 +1,12 @@
+INSERT INTO public.faculty (id, name, vuz_id) VALUES (1, 'ITIS', 3);
+INSERT INTO public.faculty (id, name, vuz_id) VALUES (2, 'PhysFac', 3);
+INSERT INTO public.faculty (id, name, vuz_id) VALUES (3, 'Radio', 4);
+INSERT INTO public.faculty (id, name, vuz_id) VALUES (4, 'PlaneConstruction', 4);
+INSERT INTO public.faculty (id, name, vuz_id) VALUES (5, 'Arts', 1);
+INSERT INTO public.faculty (id, name, vuz_id) VALUES (6, 'Sport', 1);
+INSERT INTO public.faculty (id, name, vuz_id) VALUES (7, 'MehMat', 2);
+INSERT INTO public.faculty (id, name, vuz_id) VALUES (8, 'Physic', 2);
+INSERT INTO public.faculty (id, name, vuz_id) VALUES (9, 'Deutch', 5);
+INSERT INTO public.faculty (id, name, vuz_id) VALUES (10, 'Spanish', 5);
+INSERT INTO public.faculty (id, name, vuz_id) VALUES (11, 'Memology', 6);
+INSERT INTO public.faculty (id, name, vuz_id) VALUES (12, 'Medical', 6);

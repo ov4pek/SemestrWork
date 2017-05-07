@@ -1,0 +1,2 @@
+INSERT INTO public.subjects (id, begin_time, day, end_time, name) VALUES (1, '10:10', 'Monday', '11:40', 'Matan');
+INSERT INTO public.subjects (id, begin_time, day, end_time, name) VALUES (2, '12:40', 'Friday', '15:10', 'Fizika');

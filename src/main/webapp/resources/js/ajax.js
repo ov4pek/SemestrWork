@@ -52,7 +52,18 @@ function ajaxMe2(selValue, nextName) {
 
     });
 }
-
+function f1(selValue){
+    $.ajax({
+        async: true,
+        url: 'href.html',
+        dataType: 'text',
+        success: function (data) {
+            var btn = '<a href="'+data+selValue+'"><button>Submit</button></a>';
+            console.log(btn);
+            $('#form_submit').html(btn);
+        }
+    });
+}
 function clearThirdAndFourth() {
     $('#sel3').text("");
     $('#sel4').text("");

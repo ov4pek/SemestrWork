@@ -82,6 +82,7 @@ public class TableController {
     String getGroups(@PathVariable String faculty) {
         FacultyJPA facultyJPA = facultyDAO.findFacultyByName(faculty);
         List<GroupJPA> foo = new LinkedList<>(groupDAO.findAllGroupByFaculty(facultyJPA));
+        foo.get(0).getNumber();
         //        kostil'
         for (GroupJPA k :
                 foo) {
@@ -114,11 +115,18 @@ public class TableController {
 
         return "table";
     }
+
+    @RequestMapping(value = "/href", method = RequestMethod.GET)
+    public @ResponseBody
+    String getHref() {
+
+        return "/raspis/";
+    }
+
     @RequestMapping(value = "/raspis/{group}", method = RequestMethod.GET)
     public String raspis(@PathVariable String group, Map map) {
         List<SubjectsJPA> subjects = new LinkedList<>(groupDAO.findGroupByName(group).getSubjects());
         map.put("list", subjects);
         return "table3";
     }
-
 }

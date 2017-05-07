@@ -1,0 +1,1 @@
+INSERT INTO public.groups (id, countstudents, name, numberofstarosta, starosta, faculty_id, vuz_id) VALUES (1, 12, '11-504', '87556867', 'Lilya', 1, 3);

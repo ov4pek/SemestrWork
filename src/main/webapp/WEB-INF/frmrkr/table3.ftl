@@ -118,7 +118,7 @@
                 <ul>
                     <#list list as l>
                     <#if l.getDay() == "Friday">
-                    <li class="single-event" data-start="${l.getBegin_time()}" data-end="${l.getEnd_time()}" data-event="event-5">
+                    <li class="single-event" data-start="${l.getBegin_time()}" data-end="${l.getEnd_time()}" data-event="event-3">
                         <a href="#0">
                             <em class="event-name">${l.getName()}</em>
                         </a>
