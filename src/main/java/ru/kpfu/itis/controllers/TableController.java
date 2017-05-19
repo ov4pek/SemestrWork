@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
+import ru.kpfu.itis.annotations.MyAnnotation;
 import ru.kpfu.itis.entities.*;
 import ru.kpfu.itis.services.*;
 
@@ -26,17 +27,19 @@ public class TableController {
     @Autowired
     private GroupDAOInt groupDAO;
 
-
+    @MyAnnotation
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String startPage() {
         return "startPage";
     }
 
+    @MyAnnotation
     @RequestMapping(value = "/main", method = RequestMethod.GET)
     public String home(Locale locale, Model model) {
         return "main";
     }
 
+    @MyAnnotation
     @RequestMapping(value = "/city/{nameCity}", method = RequestMethod.GET)
     public @ResponseBody
     String getKazanUniversities(@PathVariable String nameCity) {
@@ -53,6 +56,7 @@ public class TableController {
         return json;
     }
 
+    @MyAnnotation
     @RequestMapping(value = "/university/{univer}", method = RequestMethod.GET)
     public @ResponseBody
     String getKFUFaculties(@PathVariable String univer) {

@@ -9,4 +9,6 @@ import ru.kpfu.itis.entities.UserJPA;
  */
 @Repository
 public interface UserJPARepository extends CrudRepository<UserJPA, Integer> {
+
+    UserJPA findOneByEmail(String email);
 }

@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder;
+import ru.kpfu.itis.annotations.MyAnnotation;
 import ru.kpfu.itis.entities.UserJPA;
 import ru.kpfu.itis.model.User;
 import ru.kpfu.itis.services.UserDAOInt;
@@ -29,12 +30,14 @@ public class RegController {
         return "regForm";
     }
 
+    @MyAnnotation
     @RequestMapping(value = "/authentication", method = RequestMethod.GET)
     public String authFormGet() {
         return "authForm";
     }
 
     //Registration and auth forms POST
+    @MyAnnotation
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
     public String regFormPost(@Valid @ModelAttribute("user") User user,
                               BindingResult result) {
@@ -47,6 +50,7 @@ public class RegController {
         }
     }
 
+    @MyAnnotation
     @RequestMapping(value = "/authentication", method = RequestMethod.POST)
     public String authFormPost() {
         return "redirect:"+ MvcUriComponentsBuilder.fromMappingName("TC#home").build();

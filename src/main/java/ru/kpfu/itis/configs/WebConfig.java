@@ -3,6 +3,7 @@ package ru.kpfu.itis.configs;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
@@ -11,9 +12,11 @@ import org.springframework.web.servlet.view.JstlView;
 import org.springframework.web.servlet.view.UrlBasedViewResolver;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver;
+import ru.kpfu.itis.loggers.WebServiceLogger;
 
 @Configuration
 @EnableWebMvc
+@EnableAspectJAutoProxy
 @ComponentScan({"ru.kpfu.itis.controllers", "ru.kpfu.itis.services"})
 public class WebConfig extends WebMvcConfigurerAdapter {
 
@@ -44,5 +47,9 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         registry.addResourceHandler("/resources/partials/**").addResourceLocations("/resources/partials/");
         registry.addResourceHandler("/resources/scss/**").addResourceLocations("/resources/scss/");
 
+    }
+    @Bean
+    public WebServiceLogger webServiceLogger(){
+        return new WebServiceLogger();
     }
 }

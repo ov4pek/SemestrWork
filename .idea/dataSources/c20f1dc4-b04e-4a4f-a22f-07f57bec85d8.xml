@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="semestrovka_spring@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="2.6">
+    <database id="1" name="semestrovka_spring">
+      <object-id>16516</object-id>
+      <visible>1</visible>
+    </database>
+    <database id="2" name="postgres">
+      <object-id>12413</object-id>
+    </database>
+    <schema id="3" parent="1" name="public">
+      <object-id>2200</object-id>
+      <visible>1</visible>
+      <introspection-state-number>833</introspection-state-number>
+      <introspection-timestamp>2017-05-07.18:52:30.171</introspection-timestamp>
+    </schema>
+    <schema id="4" parent="1" name="pg_catalog">
+      <object-id>11</object-id>
+    </schema>
+    <schema id="5" parent="1" name="pg_toast">
+      <object-id>99</object-id>
+    </schema>
+    <schema id="6" parent="1" name="pg_temp_1">
+      <object-id>11816</object-id>
+    </schema>
+    <schema id="7" parent="1" name="pg_toast_temp_1">
+      <object-id>11817</object-id>
+    </schema>
+    <schema id="8" parent="1" name="information_schema">
+      <object-id>12121</object-id>
+    </schema>
+    <sequence id="9" parent="3" name="city_id_seq">
+      <object-id>16517</object-id>
+      <state-number>785</state-number>
+    </sequence>
+    <sequence id="10" parent="3" name="faculty_id_seq">
+      <object-id>16525</object-id>
+      <state-number>786</state-number>
+    </sequence>
+    <sequence id="11" parent="3" name="groups_id_seq">
+      <object-id>16538</object-id>
+      <state-number>788</state-number>
+    </sequence>
+    <sequence id="12" parent="3" name="subjects_id_seq">
+      <object-id>16617</object-id>
+      <state-number>831</state-number>
+    </sequence>
+    <sequence id="13" parent="3" name="users_id_seq">
+      <object-id>16560</object-id>
+      <state-number>790</state-number>
+    </sequence>
+    <sequence id="14" parent="3" name="vuz_id_seq">
+      <object-id>16571</object-id>
+      <state-number>791</state-number>
+    </sequence>
+    <table id="15" parent="3" name="city">
+      <object-id>16519</object-id>
+      <state-number>797</state-number>
+    </table>
+    <table id="16" parent="3" name="faculty">
+      <object-id>16527</object-id>
+      <state-number>795</state-number>
+    </table>
+    <table id="17" parent="3" name="group_subject">
+      <object-id>16612</object-id>
+      <state-number>833</state-number>
+    </table>
+    <table id="18" parent="3" name="groups">
+      <object-id>16540</object-id>
+      <state-number>832</state-number>
+    </table>
+    <table id="19" parent="3" name="subjects">
+      <object-id>16619</object-id>
+      <state-number>833</state-number>
+    </table>
+    <table id="20" parent="3" name="users">
+      <object-id>16562</object-id>
+      <state-number>790</state-number>
+    </table>
+    <table id="21" parent="3" name="vuz">
+      <object-id>16573</object-id>
+      <state-number>797</state-number>
+    </table>
+    <column id="22" parent="15" name="id">
+      <state-number>785</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval(&apos;city_id_seq&apos;::regclass)</default-expression>
+    </column>
+    <column id="23" parent="15" name="name">
+      <state-number>785</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <index id="24" parent="15" name="city_pkey">
+      <object-id>16523</object-id>
+      <columns>id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="25" parent="15" name="city_pkey">
+      <object-id>16524</object-id>
+      <columns>id</columns>
+      <underlying-index>city_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <column id="26" parent="16" name="id">
+      <state-number>786</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval(&apos;faculty_id_seq&apos;::regclass)</default-expression>
+    </column>
+    <column id="27" parent="16" name="name">
+      <state-number>786</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="28" parent="16" name="vuz_id">
+      <state-number>786</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+    </column>
+    <index id="29" parent="16" name="faculty_pkey">
+      <object-id>16531</object-id>
+      <columns>id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="30" parent="16" name="faculty_pkey">
+      <object-id>16532</object-id>
+      <columns>id</columns>
+      <underlying-index>faculty_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="31" parent="16" name="fkobcfmig67otypq74gt63f5vbl">
+      <object-id>16582</object-id>
+      <columns>vuz_id</columns>
+      <ref-key>~.vuz.vuz_pkey</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="32" parent="17" name="subject_id">
+      <state-number>830</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+    </column>
+    <column id="33" parent="17" name="group_id">
+      <state-number>830</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+    </column>
+    <index id="34" parent="17" name="group_subject_pkey">
+      <object-id>16615</object-id>
+      <columns>subject_id
+group_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="35" parent="17" name="group_subject_pkey">
+      <object-id>16616</object-id>
+      <columns>subject_id
+group_id</columns>
+      <underlying-index>group_subject_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="36" parent="17" name="fk2qu1afk2lnpuu3y670eofwqxp">
+      <object-id>16633</object-id>
+      <columns>subject_id</columns>
+      <ref-key>~.subjects.subjects_pkey</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="37" parent="17" name="fkma8bk9fi6g9bwl1ybe4em41tl">
+      <object-id>16628</object-id>
+      <columns>group_id</columns>
+      <ref-key>~.groups.groups_pkey</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="38" parent="18" name="id">
+      <state-number>788</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval(&apos;groups_id_seq&apos;::regclass)</default-expression>
+    </column>
+    <column id="39" parent="18" name="countstudents">
+      <state-number>788</state-number>
+      <data-type>integer|0</data-type>
+    </column>
+    <column id="40" parent="18" name="name">
+      <state-number>788</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="41" parent="18" name="numberofstarosta">
+      <state-number>788</state-number>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="42" parent="18" name="starosta">
+      <state-number>788</state-number>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="43" parent="18" name="faculty_id">
+      <state-number>788</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+    </column>
+    <column id="44" parent="18" name="vuz_id">
+      <state-number>788</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+    </column>
+    <index id="45" parent="18" name="groups_pkey">
+      <object-id>16547</object-id>
+      <columns>id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="46" parent="18" name="groups_pkey">
+      <object-id>16548</object-id>
+      <columns>id</columns>
+      <underlying-index>groups_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="47" parent="18" name="fk5ijohl585pckjt7geea53s5pp">
+      <object-id>16597</object-id>
+      <columns>faculty_id</columns>
+      <ref-key>~.faculty.faculty_pkey</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="48" parent="18" name="fkaae9vodcqj8w8ogq9bivlfjkn">
+      <object-id>16602</object-id>
+      <columns>vuz_id</columns>
+      <ref-key>~.vuz.vuz_pkey</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="49" parent="19" name="id">
+      <state-number>831</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval(&apos;subjects_id_seq&apos;::regclass)</default-expression>
+    </column>
+    <column id="50" parent="19" name="begin_time">
+      <state-number>831</state-number>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="51" parent="19" name="day">
+      <state-number>831</state-number>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="52" parent="19" name="end_time">
+      <state-number>831</state-number>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="53" parent="19" name="name">
+      <state-number>831</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <index id="54" parent="19" name="subjects_pkey">
+      <object-id>16626</object-id>
+      <columns>id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="55" parent="19" name="subjects_pkey">
+      <object-id>16627</object-id>
+      <columns>id</columns>
+      <underlying-index>subjects_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <column id="56" parent="20" name="id">
+      <state-number>790</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval(&apos;users_id_seq&apos;::regclass)</default-expression>
+    </column>
+    <column id="57" parent="20" name="email">
+      <state-number>790</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="58" parent="20" name="name">
+      <state-number>790</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="59" parent="20" name="password">
+      <state-number>790</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <index id="60" parent="20" name="users_pkey">
+      <object-id>16569</object-id>
+      <columns>id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="61" parent="20" name="users_pkey">
+      <object-id>16570</object-id>
+      <columns>id</columns>
+      <underlying-index>users_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <column id="62" parent="21" name="id">
+      <state-number>791</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval(&apos;vuz_id_seq&apos;::regclass)</default-expression>
+    </column>
+    <column id="63" parent="21" name="address">
+      <state-number>791</state-number>
+      <data-type>varchar(1000)|0</data-type>
+    </column>
+    <column id="64" parent="21" name="name">
+      <state-number>791</state-number>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="65" parent="21" name="city_id">
+      <state-number>791</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+    </column>
+    <index id="66" parent="21" name="vuz_pkey">
+      <object-id>16580</object-id>
+      <columns>id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="67" parent="21" name="vuz_pkey">
+      <object-id>16581</object-id>
+      <columns>id</columns>
+      <underlying-index>vuz_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="68" parent="21" name="fk3u4wi08avpogpnedl41nyvwa2">
+      <object-id>16607</object-id>
+      <columns>city_id</columns>
+      <ref-key>~.city.city_pkey</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+  </database-model>
+</dataSource>
